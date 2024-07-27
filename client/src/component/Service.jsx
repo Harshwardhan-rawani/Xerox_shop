@@ -6,11 +6,13 @@ import { FaBook } from "react-icons/fa";
 import { FaPrint } from "react-icons/fa6";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 function Service() {
         useEffect(() => {
           AOS.init({
             duration: 1000,
-            once:true
+            once:true,
+            offset: 50,
           });
         }, []);
   return (
@@ -49,13 +51,16 @@ function Service() {
         <h2 className='lg:text-xl text-lg font-bold mb-2 text-gray-700'>Print</h2></div>
    
     <p className='mb-4 lg:mt-4 mt-2 text-gray-500'>This is a brief description of the product.</p>
-    <motion.button
+    <Link to={"/print"}>  <motion.button
       className=" text-white md:text-xl  bg-green-500 px-4  py-1 rounded-sm transition-colors duration-300 hover:bg-green-600"
       whileTap={{ scale: 0.85 }}
       transition={{ type: 'spring', stiffness: 300 ,damping:10}}
     >
+  
       Order
+   
     </motion.button>
+    </Link>
   </div>
   
 
@@ -82,16 +87,17 @@ data-aos="fade-up"
   className='bg-white h-auto p-5 border-t-2 border-t-white rounded-md hover:border-t-2 hover:border-t-green-500 shadow-lg hover:shadow-2xl transition-all duration-300'>
         <div className='flex items-center space-x-3'>
             <div className=' lg:text-3xl text-2xl  text-gray-700'><FaCartShopping/></div>
-        <h2 className='lg:text-xl text-lg font-bold mb-2 text-gray-700'>Bio Product</h2></div>
+        <h2 className='lg:text-xl text-lg font-bold mb-2 text-gray-700'>E-Commerce</h2></div>
    
     <p className='mb-4 mt-4 text-gray-500'>This is a brief description of the product.</p>
-    <motion.button
+   <Link to={"/ecom"}> <motion.button
       className=" text-white  bg-green-500 px-4 md:text-xl  py-1 rounded-sm transition-colors duration-300 hover:bg-green-600"
       whileTap={{ scale: 0.85 }}
       transition={{ type: 'spring', stiffness: 300 ,damping:10}}
     >
       Order
     </motion.button>
+    </Link>
   </div>
 
   <div
@@ -99,7 +105,7 @@ data-aos="fade-up"
   className='bg-white h-auto p-5 border-t-2 border-t-white rounded-md hover:border-t-2 hover:border-t-green-500 shadow-lg hover:shadow-2xl transition-all duration-300'>
         <div className='flex items-center space-x-3'>
             <div className=' lg:text-3xl text-2xl  text-gray-700'><FaTshirt/></div>
-        <h2 className='lg:text-xl text-lg  font-bold mb-2 text-gray-700'>T Shirt Print</h2></div>
+        <h2 className='lg:text-xl text-lg  font-bold mb-2 text-gray-700'>Portfolio</h2></div>
    
     <p className='mb-4 mt-4 text-gray-500'>This is a brief description of the product.</p>
     <motion.button
